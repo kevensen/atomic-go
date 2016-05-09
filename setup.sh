@@ -2,7 +2,7 @@
 
 export GOPATH=~/go
 
-docker build --build-arg user=$(id -u)  -t atomic-go .
+# docker build --build-arg user=$(id -u)  -t atomic-go .
 
 if [ ! -d ~/go ]; then
 	mkdir ~/go
