@@ -2,7 +2,7 @@ FROM centos:7
 
 MAINTAINER Kenneth D. Evensen <kevensen@redhat.com>
 
-ARG user
+ARG user=1000
 
 ENV HOME=/opt/app-root
 ENV GOPATH $HOME/go
