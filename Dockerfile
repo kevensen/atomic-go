@@ -16,10 +16,14 @@ RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
     mkdir $HOME && \
     mkdir $GOPATH
 
+
+# Copy executable utilities.
+COPY bin/ /usr/bin/
+
 WORKDIR $HOME
 
 RUN useradd -u ${user} -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default && chown -R ${user}:0 /opt/app-root
 
 USER ${user}
 
-ENTRYPOINT ["/usr/bin/go"]
+ENTRYPOINT ["container-entrypoint"]

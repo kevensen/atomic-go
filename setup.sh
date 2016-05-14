@@ -2,7 +2,7 @@
 
 export GOPATH=~/go
 
-# docker build --build-arg user=$(id -u)  -t atomic-go .
+docker build --build-arg user=$(id -u)  -t atomic-go .
 
 if [ ! -d ~/go ]; then
 	mkdir ~/go
@@ -17,7 +17,7 @@ fi
 cat << EOF > ~/bin/go
 #!/bin/bash
 echo "\$@"
-docker run --rm -u $(id -u) -v ~/go:/opt/app-root/go atomic-go "\$@"
+docker run --rm -u $(id -u) -v ~/go:/opt/app-root/go atomic-go go "\$@"
 EOF
 
 chmod u+x ~/bin/go
