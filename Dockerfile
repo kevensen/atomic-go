@@ -22,4 +22,4 @@ RUN useradd -u ${user} -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Applicati
 
 USER ${user}
 
-ENTRYPOINT ["/usr/bin/go"]
+ENTRYPOINT ["/bin/bash"]
